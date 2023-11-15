@@ -20,6 +20,6 @@ namespace Application {
     }
 
     void GameManager::Tick(float deltaTime) {
-
+        LOG(deltaTime);
     }
 }

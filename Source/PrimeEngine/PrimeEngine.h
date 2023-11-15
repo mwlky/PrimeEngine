@@ -3,6 +3,7 @@
 
 #include "SDL2/SDL.h"
 #include <iostream>
+#include <chrono>
 
 namespace Prime {
 
@@ -18,6 +19,9 @@ namespace Prime {
         SDL_Renderer* m_Renderer = nullptr;
         int m_TickCounter = 0;
         bool m_IsRunning;
+
+        const int FPS = 60;
+        const int FRAME_DELAY = 1000 / FPS;
     };
 
 }

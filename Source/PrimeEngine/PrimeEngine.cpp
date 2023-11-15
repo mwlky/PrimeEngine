@@ -1,13 +1,17 @@
+
 #include "PrimeEngine.h"
 
 namespace Prime {
 
     void PrimeEngine::StartTicking(void (*tick)(float)) {
-
-        float deltaTime = 0;
+        double frameTime;
 
         while (true){
-            tick(deltaTime);
+            tick(frameTime);
         }
+    }
+
+    PrimeEngine::PrimeEngine() {
+
     }
 } // Prime
