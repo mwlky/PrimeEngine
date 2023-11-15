@@ -1,9 +1,9 @@
 #ifndef PRIMEENGINE_PRIMEENGINE_H
 #define PRIMEENGINE_PRIMEENGINE_H
 
-#include "SDL2/SDL.h"
 #include <iostream>
 #include <chrono>
+#include "Window.h"
 
 namespace Prime {
 
@@ -13,15 +13,10 @@ namespace Prime {
         PrimeEngine();
 
         void StartTicking(void(*tick)(float));
+        void CreateWindow(const char* title, int xPos, int yPos, int width, int height);
 
     private:
-        SDL_Window* m_Window = nullptr;
-        SDL_Renderer* m_Renderer = nullptr;
-        int m_TickCounter = 0;
-        bool m_IsRunning;
-
-        const int FPS = 60;
-        const int FRAME_DELAY = 1000 / FPS;
+        Window* m_Window = nullptr;
     };
 
 }

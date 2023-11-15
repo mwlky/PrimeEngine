@@ -3,15 +3,22 @@
 
 namespace Prime {
 
+    PrimeEngine::PrimeEngine() {
+
+    }
+
     void PrimeEngine::StartTicking(void (*tick)(float)) {
-        double frameTime;
 
         while (true){
-            tick(frameTime);
+            tick(0);
+
+            if(m_Window != nullptr){
+                m_Window->RenderWindow();
+            }
         }
     }
 
-    PrimeEngine::PrimeEngine() {
-
+    void PrimeEngine::CreateWindow(const char *title, int xPos, int yPos, int width, int height) {
+        m_Window = new Window(title, xPos, yPos, width, height);
     }
 } // Prime

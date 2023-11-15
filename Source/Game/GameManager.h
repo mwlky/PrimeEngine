@@ -9,7 +9,7 @@ namespace Application {
 
     class GameManager {
     public:
-        void Run();
+        void Init();
 
     private:
         static void Tick(float deltaTime);
