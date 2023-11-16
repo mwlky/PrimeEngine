@@ -1,20 +1,16 @@
-
 #include "PrimeEngine.h"
 
 namespace Prime {
     PrimeEngine::PrimeEngine() {
-
+        m_IsRunning = true;
     }
 
-    void PrimeEngine::StartTicking(void (*tick)()) {
-
-        const int FPS = 60;
-        const int frameDelay = 1000/ FPS;
+    void PrimeEngine::InitEngine(void (*tick)()) {
 
         Uint32 frameStart;
         double frameTime;
 
-        while (true){
+        while (m_IsRunning){
 
             frameStart = SDL_GetTicks();
 
@@ -23,6 +19,7 @@ namespace Prime {
             }
 
             tick();
+            HandleEvents();
 
             frameTime = SDL_GetTicks() - frameStart;
 
@@ -30,9 +27,28 @@ namespace Prime {
                 SDL_Delay(frameDelay - frameTime);
             }
         }
+
+        Clear();
     }
 
     void PrimeEngine::CreateWindow(const char *title, int xPos, int yPos, int width, int height) {
         m_Window = new Window(title, xPos, yPos, width, height);
+    }
+
+    void PrimeEngine::Clear() {
+
+        delete m_Window;
+
+        std::cout << "Game cleaned" << std::endl;
+    }
+
+    void PrimeEngine::HandleEvents() {
+        SDL_PollEvent(&m_Event);
+
+        switch (m_Event.type) {
+            case SDL_QUIT:{
+                m_IsRunning = false;
+            }
+        }
     }
 } // Prime

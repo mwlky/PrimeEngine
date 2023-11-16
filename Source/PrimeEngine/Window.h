@@ -17,6 +17,12 @@ namespace Prime{
             SDL_UpdateWindowSurface(m_Window);
         }
 
+        ~Window(){
+            SDL_DestroyWindow(m_Window);
+            SDL_DestroyRenderer(m_Renderer);
+            SDL_Quit();
+        }
+
     private:
         SDL_Window* m_Window = nullptr;
         SDL_Renderer* m_Renderer = nullptr;

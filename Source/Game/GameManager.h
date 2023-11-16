@@ -1,7 +1,3 @@
-//
-// Created by mwlky on 11/12/23.
-//
-
 #ifndef PRIMEENGINE_GAMEMANAGER_H
 #define PRIMEENGINE_GAMEMANAGER_H
 

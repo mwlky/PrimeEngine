@@ -5,14 +5,12 @@
 
 namespace Application {
 
-    int tick;
-
     void GameManager::Init() {
 
         Prime::PrimeEngine primeEngine;
 
-        primeEngine.CreateWindow("Game", 0, 0, 500, 500);
-        primeEngine.StartTicking(GameManager::Tick);
+        primeEngine.CreateWindow("Game", 0, 0, 1020, 720);
+        primeEngine.InitEngine(GameManager::Tick);
 
         Start();
     }
