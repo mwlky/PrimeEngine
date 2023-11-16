@@ -5,6 +5,8 @@
 
 namespace Application {
 
+    int tick;
+
     void GameManager::Init() {
 
         Prime::PrimeEngine primeEngine;
@@ -19,7 +21,7 @@ namespace Application {
 
     }
 
-    void GameManager::Tick(float deltaTime) {
-        LOG("tick");
+    void GameManager::Tick() {
+
     }
 }

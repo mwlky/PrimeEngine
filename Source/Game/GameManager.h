@@ -12,7 +12,7 @@ namespace Application {
         void Init();
 
     private:
-        static void Tick(float deltaTime);
+        static void Tick();
         void Start();
     };
 

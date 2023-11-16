@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <chrono>
+#include <functional>
 #include "Window.h"
 
 namespace Prime {
@@ -12,7 +13,7 @@ namespace Prime {
     public:
         PrimeEngine();
 
-        void StartTicking(void(*tick)(float));
+        void StartTicking(void (*tick)());
         void CreateWindow(const char* title, int xPos, int yPos, int width, int height);
 
     private:
