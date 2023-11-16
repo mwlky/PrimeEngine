@@ -1,6 +1,8 @@
 #ifndef PRIMEENGINE_GAMEMANAGER_H
 #define PRIMEENGINE_GAMEMANAGER_H
 
+#include "../PrimeEngine/PrimeEngine.h"
+
 namespace Application {
 
     class GameManager {
@@ -9,7 +11,7 @@ namespace Application {
 
     private:
         static void Tick();
-        void Start();
+        static void Start();
     };
 
 } // Application

@@ -1,25 +1,20 @@
 #include "GameManager.h"
-#include "../PrimeEngine/PrimeEngine.h"
 
 #define LOG(X) std::cout<< X << std::endl;
 
 namespace Application {
 
+    Prime::PrimeEngine engine;
+
     void GameManager::Init() {
 
-        Prime::PrimeEngine primeEngine;
-
-        primeEngine.CreateWindow("Game", 0, 0, 1020, 720);
-        primeEngine.InitEngine(GameManager::Tick);
-
-        Start();
+        engine.CreateWindow("Game", 0, 0, 1020, 720);
+        engine.InitEngine(GameManager::Tick, GameManager::Start);
     }
 
     void GameManager::Start() {
-
     }
 
     void GameManager::Tick() {
-
     }
 }

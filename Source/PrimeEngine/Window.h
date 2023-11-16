@@ -23,6 +23,9 @@ namespace Prime{
             SDL_Quit();
         }
 
+        SDL_Window* GetCurrentWindow() { return m_Window; }
+        SDL_Renderer* GetRenderer() { return m_Renderer; }
+
     private:
         SDL_Window* m_Window = nullptr;
         SDL_Renderer* m_Renderer = nullptr;

@@ -3,32 +3,8 @@
 namespace Prime {
     PrimeEngine::PrimeEngine() {
         m_IsRunning = true;
-    }
 
-    void PrimeEngine::InitEngine(void (*tick)()) {
-
-        Uint32 frameStart;
-        double frameTime;
-
-        while (m_IsRunning){
-
-            frameStart = SDL_GetTicks();
-
-            if(m_Window != nullptr){
-                m_Window->RenderWindow();
-            }
-
-            tick();
-            HandleEvents();
-
-            frameTime = SDL_GetTicks() - frameStart;
-
-            if(frameDelay > frameTime){
-                SDL_Delay(frameDelay - frameTime);
-            }
-        }
-
-        Clear();
+        m_SpriteManager = new SpriteManager;
     }
 
     void PrimeEngine::CreateWindow(const char *title, int xPos, int yPos, int width, int height) {
@@ -50,5 +26,32 @@ namespace Prime {
                 m_IsRunning = false;
             }
         }
+    }
+
+    void PrimeEngine::InitEngine(const PrimeEngine::TickFunction& tick, const PrimeEngine::StartFunction& startFunction) {
+        Uint32 frameStart;
+        double frameTime;
+
+        startFunction();
+
+        while (m_IsRunning){
+
+            frameStart = SDL_GetTicks();
+
+            if(m_Window != nullptr){
+                m_Window->RenderWindow();
+            }
+
+            tick();
+            HandleEvents();
+
+            frameTime = SDL_GetTicks() - frameStart;
+
+            if(frameDelay > frameTime){
+                SDL_Delay(frameDelay - frameTime);
+            }
+        }
+
+        Clear();
     }
 } // Prime
