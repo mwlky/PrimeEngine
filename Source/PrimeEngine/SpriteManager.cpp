@@ -1,15 +1,31 @@
 #include "SpriteManager.h"
+#include "Window.h"
+#include "iostream"
 
 namespace Prime {
     SDL_Texture *SpriteManager::LoadTexture(const char *filePath) {
 
-//        m_Textures.push_back()
+        SDL_Surface *tempSurface = IMG_Load(filePath);
 
-        return nullptr;
+        if (!tempSurface) {
+            std::cerr << "Unable to load image " << filePath << "! SDL_image Error: " << IMG_GetError() << std::endl;
+            return nullptr;
+        }
+
+        SDL_Texture *texture = SDL_CreateTextureFromSurface(Window::Renderer, tempSurface);
+
+        if (!texture) {
+            std::cerr << "Unable to create texture from " << filePath << "! SDL Error: " << SDL_GetError() << std::endl;
+            return nullptr;
+        }
+        SDL_FreeSurface(tempSurface);
+
+
+        return texture;
     }
 
-    void SpriteManager::Draw(SDL_Texture *texture, SDL_Renderer* renderer ,SDL_Rect sourcePosition, SDL_Rect destinationPosition) {
+    void SpriteManager::Draw(SDL_Texture *texture, SDL_Rect destinationPosition) {
 
-        SDL_RenderCopy(renderer, texture, &sourcePosition, &destinationPosition);
+        SDL_RenderCopy(Prime::Window::Renderer, texture, NULL, &destinationPosition);
     }
 } // PrimeEngine

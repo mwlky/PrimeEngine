@@ -1,28 +1,22 @@
 #include "Window.h"
-#include "iostream"
 
 SDL_Renderer *Prime::Window::Renderer = nullptr;
 SDL_Window *Prime::Window::CurrentWindow = nullptr;
 
 Prime::Window::Window(const char *title, int xPos, int yPos, int width, int height) {
     SDL_Init(SDL_INIT_EVERYTHING);
+    IMG_Init(SDL_INIT_EVERYTHING);
 
     m_Window = SDL_CreateWindow(title, xPos, yPos, width, height, SDL_WINDOW_SHOWN);
     if (m_Window) {
         m_Renderer = SDL_CreateRenderer(m_Window, -1, SDL_RENDERER_ACCELERATED);
-//        m_Surface = SDL_GetWindowSurface(CurrentWindow);
+        m_Surface = SDL_GetWindowSurface(CurrentWindow);
 
         Renderer = m_Renderer;
         CurrentWindow = m_Window;
 
-//        SDL_SetRenderDrawColor(m_Renderer, 255, 255, 255, 255);
+        SDL_SetRenderDrawColor(m_Renderer, 255, 255, 255, 255);
     }
-}
-
-void Prime::Window::RenderWindow() {
-    SDL_RenderClear(m_Renderer);
-
-    SDL_RenderPresent(m_Renderer);
 }
 
 Prime::Window::~Window() {

@@ -3,8 +3,6 @@
 namespace Prime {
     PrimeEngine::PrimeEngine() {
         m_IsRunning = true;
-
-        m_SpriteManager = new SpriteManager;
     }
 
     void PrimeEngine::CreateWindow(const char *title, int xPos, int yPos, int width, int height) {
@@ -13,6 +11,7 @@ namespace Prime {
 
     void PrimeEngine::Clear() {
 
+        SDL_DestroyWindow(m_Window->CurrentWindow);
         delete m_Window;
 
         std::cout << "Game cleaned" << std::endl;
@@ -28,7 +27,8 @@ namespace Prime {
         }
     }
 
-    void PrimeEngine::InitEngine(const PrimeEngine::TickFunction& tick, const PrimeEngine::StartFunction& startFunction) {
+    void PrimeEngine::InitEngine(const PrimeEngine::TickFunction &tick, const PrimeEngine::StartFunction &startFunction,
+                                 const PrimeEngine::RenderFunction &renderFunction) {
         Uint32 frameStart;
         double frameTime;
 
@@ -38,12 +38,13 @@ namespace Prime {
 
             frameStart = SDL_GetTicks();
 
-            if(m_Window != nullptr){
-                m_Window->RenderWindow();
-            }
+            SDL_RenderClear(Prime::Window::Renderer);
 
-            tick();
             HandleEvents();
+            tick();
+            renderFunction();
+
+            SDL_RenderPresent(Prime::Window::Renderer);
 
             frameTime = SDL_GetTicks() - frameStart;
 

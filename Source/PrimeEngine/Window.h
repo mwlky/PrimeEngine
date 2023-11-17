@@ -1,4 +1,5 @@
 #include "SDL.h"
+#include "SDL_image.h"
 
 namespace Prime{
 
@@ -6,7 +7,6 @@ namespace Prime{
 
     public:
         Window(const char* title, int xPos, int yPos, int width, int height);
-        void RenderWindow();
 
         ~Window();
 

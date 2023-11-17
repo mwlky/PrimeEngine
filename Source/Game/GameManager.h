@@ -12,6 +12,7 @@ namespace Application {
     private:
         static void Tick();
         static void Start();
+        static void Render();
     };
 
 } // Application

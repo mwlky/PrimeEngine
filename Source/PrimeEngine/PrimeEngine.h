@@ -6,6 +6,7 @@
 #include <functional>
 #include "Window.h"
 #include "SpriteManager.h"
+#include "Components/Sprite.h"
 
 namespace Prime {
 
@@ -16,18 +17,17 @@ namespace Prime {
 
         typedef std::function<void()> TickFunction;
         typedef std::function<void()> StartFunction;
+        typedef std::function<void()> RenderFunction;
 
-        void InitEngine(const PrimeEngine::TickFunction& tick, const PrimeEngine::StartFunction& startFunction);
+        void InitEngine(const PrimeEngine::TickFunction &tick, const PrimeEngine::StartFunction &startFunction,
+                        const PrimeEngine::RenderFunction &renderFunction);
+
         void CreateWindow(const char *title, int xPos, int yPos, int width, int height);
-
-        SpriteManager* GetSpriteManager() { return m_SpriteManager; }
-        Window* GetCurrentWindow(){ return m_Window; }
 
     private:
         void Clear();
-        void HandleEvents();
 
-        SpriteManager *m_SpriteManager = nullptr;
+        void HandleEvents();
 
         SDL_Event m_Event;
         Window *m_Window = nullptr;
