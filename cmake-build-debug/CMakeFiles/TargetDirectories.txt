@@ -1,0 +1,3 @@
+/home/mwlky/Documents/git/PrimeEngine/cmake-build-debug/CMakeFiles/PrimeEngine.dir
+/home/mwlky/Documents/git/PrimeEngine/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/mwlky/Documents/git/PrimeEngine/cmake-build-debug/CMakeFiles/rebuild_cache.dir

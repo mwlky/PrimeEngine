@@ -1,0 +1,22 @@
+# ninja log v5
+1011	1065	1700245069042989732	PrimeEngine	b36e571d30d0a9bd
+1	1025	1700244316943711052	CMakeFiles/PrimeEngine.dir/main.cpp.o	5f224e6d334d1c5a
+1	1011	1700245068989655931	CMakeFiles/PrimeEngine.dir/Source/PrimeEngine/PrimeEngine.cpp.o	bd4805292793881a
+1	1041	1700244316960377841	CMakeFiles/PrimeEngine.dir/Source/Game/GameManager.cpp.o	6c2f430b7dada61b
+0	19	1700247079343439541	build.ninja	fba7b5d5c9d74a32
+2	877	1700243631952687831	CMakeFiles/PrimeEngine.dir/Source/PrimeEngine/SpriteManager.cpp.o	4d2950ad5d1fac01
+1	653	1700244316570374969	CMakeFiles/PrimeEngine.dir/Source/PrimeEngine/Window.cpp.o	9a90d6ad1771f36b
+1	717	1700069792367323409	CMakeFiles/PrimeEngine.dir/Source/Game/Game.cpp.o	aa66f4408cc09b31
+2	318	1700247318822488990	CMakeFiles/PrimeEngine.dir/Source/PrimeEngine/Math/Vector2.cpp.o	b6531b2d424679a3
+2	934	1700247319439161610	CMakeFiles/PrimeEngine.dir/Source/PrimeEngine/Managers/SpriteManager.cpp.o	85e5a0f811ef965d
+1	1066	1700247319569162865	CMakeFiles/PrimeEngine.dir/main.cpp.o	5f224e6d334d1c5a
+1	1076	1700247319579162961	CMakeFiles/PrimeEngine.dir/Source/Game/GameManager.cpp.o	6c2f430b7dada61b
+1	1080	1700247319585829692	CMakeFiles/PrimeEngine.dir/Source/PrimeEngine/PrimeEngine.cpp.o	bd4805292793881a
+1080	1136	1700247319639163541	PrimeEngine	62fa2edc6fa939ed
+1	997	1700247331115940860	CMakeFiles/PrimeEngine.dir/Source/Game/GameManager.cpp.o	6c2f430b7dada61b
+997	1055	1700247331172608072	PrimeEngine	62fa2edc6fa939ed
+1	991	1700247358032865999	CMakeFiles/PrimeEngine.dir/Source/Game/GameManager.cpp.o	6c2f430b7dada61b
+991	1047	1700247358086199843	PrimeEngine	62fa2edc6fa939ed
+2	1007	1700247402686625060	CMakeFiles/PrimeEngine.dir/main.cpp.o	5f224e6d334d1c5a
+2	1028	1700247402706625249	CMakeFiles/PrimeEngine.dir/Source/PrimeEngine/PrimeEngine.cpp.o	bd4805292793881a
+2	1041	1700247402719958709	CMakeFiles/PrimeEngine.dir/Source/Game/GameManager.cpp.o	6c2f430b7dada61b
