@@ -1,5 +1,5 @@
 #include "SpriteManager.h"
-#include "Window.h"
+#include "../Window.h"
 #include "iostream"
 
 namespace Prime {

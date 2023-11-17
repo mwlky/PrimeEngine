@@ -2,7 +2,7 @@
 #define PRIMEENGINE_SPRITE_H
 
 #include "SDL.h"
-#include "../SpriteManager.h"
+#include "../Managers/SpriteManager.h"
 
 namespace Prime {
 

@@ -1,11 +1,14 @@
 #include "GameManager.h"
+#include "../PrimeEngine/Math/Vector2.h"
 
 #define LOG(X) std::cout<< X << std::endl;
 
+using namespace Prime;
+
 namespace Application {
 
-    Prime::PrimeEngine engine;
-    Prime::Sprite* testSprite;
+    PrimeEngine engine;
+    Sprite* testSprite;
 
     void GameManager::Init() {
 
@@ -15,7 +18,7 @@ namespace Application {
 
     void GameManager::Start() {
 
-        testSprite = new Prime::Sprite("../Assets/Grass1.png");
+        testSprite = new Sprite("../Assets/Grass1.png");
     }
 
     void GameManager::Render() {

@@ -5,7 +5,7 @@
 #include <chrono>
 #include <functional>
 #include "Window.h"
-#include "SpriteManager.h"
+#include "Managers/SpriteManager.h"
 #include "Components/Sprite.h"
 
 namespace Prime {

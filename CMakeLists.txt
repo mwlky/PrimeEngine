@@ -15,10 +15,12 @@ add_executable(PrimeEngine main.cpp
         Source/PrimeEngine/PrimeEngine.cpp
         Source/PrimeEngine/PrimeEngine.h
         Source/PrimeEngine/Window.h
-        Source/PrimeEngine/SpriteManager.cpp
-        Source/PrimeEngine/SpriteManager.h
+        Source/PrimeEngine/Managers/SpriteManager.cpp
+        Source/PrimeEngine/Managers/SpriteManager.h
         Source/PrimeEngine/Components/Sprite.h
         Source/PrimeEngine/Window.cpp
+        Source/PrimeEngine/Math/Vector2.cpp
+        Source/PrimeEngine/Math/Vector2.h
 )
 
 target_link_libraries(PrimeEngine
