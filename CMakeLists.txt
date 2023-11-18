@@ -21,6 +21,8 @@ add_executable(PrimeEngine main.cpp
         Source/PrimeEngine/Window.cpp
         Source/PrimeEngine/Math/Vector2.cpp
         Source/PrimeEngine/Math/Vector2.h
+        Source/PrimeEngine/Components/ECS.h
+        Source/PrimeEngine/Components/Components.h
 )
 
 target_link_libraries(PrimeEngine
