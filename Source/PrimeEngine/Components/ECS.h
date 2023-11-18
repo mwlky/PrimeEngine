@@ -1,7 +1,6 @@
 #ifndef PRIMEENGINE_ECS_H
 #define PRIMEENGINE_ECS_H
 
-
 #include <iostream>
 #include <vector>
 #include <memory>
