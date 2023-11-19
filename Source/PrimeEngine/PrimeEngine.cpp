@@ -17,10 +17,10 @@ namespace Prime {
         std::cout << "Game cleaned" << std::endl;
     }
 
-    void PrimeEngine::HandleEvents() {
-        SDL_PollEvent(&m_Event);
+    void PrimeEngine::HandleWindowEvents() {
+        SDL_PollEvent(&event);
 
-        switch (m_Event.type) {
+        switch (event.type) {
             case SDL_QUIT:{
                 m_IsRunning = false;
             }
@@ -40,7 +40,7 @@ namespace Prime {
 
             SDL_RenderClear(Prime::Window::Renderer);
 
-            HandleEvents();
+            HandleWindowEvents();
             tick();
             renderFunction();
 

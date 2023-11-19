@@ -7,6 +7,8 @@
 #include "Window.h"
 #include "Managers/SpriteManager.h"
 #include "Components/Sprite.h"
+#include "Components/Player/Player.h"
+#include "Math/Vector2.h"
 
 namespace Prime {
 
@@ -24,14 +26,15 @@ namespace Prime {
 
         void CreateWindow(const char *title, int xPos, int yPos, int width, int height);
 
+
+
     private:
         void Clear();
+        void HandleWindowEvents();
 
-        void HandleEvents();
-
-        SDL_Event m_Event;
         Window *m_Window = nullptr;
         bool m_IsRunning;
+        SDL_Event event;
 
         const int FPS = 60;
         const int frameDelay = 1000 / FPS;

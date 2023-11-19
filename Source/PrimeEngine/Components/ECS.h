@@ -7,6 +7,7 @@
 #include <algorithm>
 #include <bitset>
 #include <array>
+#include <unordered_map>
 
 namespace Prime {
 

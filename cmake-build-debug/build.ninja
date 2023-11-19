@@ -91,6 +91,13 @@ build CMakeFiles/PrimeEngine.dir/Source/PrimeEngine/Math/Vector2.cpp.o: CXX_COMP
   OBJECT_DIR = CMakeFiles/PrimeEngine.dir
   OBJECT_FILE_DIR = CMakeFiles/PrimeEngine.dir/Source/PrimeEngine/Math
 
+build CMakeFiles/PrimeEngine.dir/Source/PrimeEngine/Components/Player/Player.cpp.o: CXX_COMPILER__PrimeEngine_unscanned_Debug /home/mwlky/Documents/git/PrimeEngine/Source/PrimeEngine/Components/Player/Player.cpp || cmake_object_order_depends_target_PrimeEngine
+  DEP_FILE = CMakeFiles/PrimeEngine.dir/Source/PrimeEngine/Components/Player/Player.cpp.o.d
+  FLAGS = -g -fdiagnostics-color=always
+  INCLUDES = -isystem /usr/include/SDL2
+  OBJECT_DIR = CMakeFiles/PrimeEngine.dir
+  OBJECT_FILE_DIR = CMakeFiles/PrimeEngine.dir/Source/PrimeEngine/Components/Player
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target PrimeEngine
@@ -99,7 +106,7 @@ build CMakeFiles/PrimeEngine.dir/Source/PrimeEngine/Math/Vector2.cpp.o: CXX_COMP
 #############################################
 # Link the executable PrimeEngine
 
-build PrimeEngine: CXX_EXECUTABLE_LINKER__PrimeEngine_Debug CMakeFiles/PrimeEngine.dir/main.cpp.o CMakeFiles/PrimeEngine.dir/Source/Game/GameManager.cpp.o CMakeFiles/PrimeEngine.dir/Source/PrimeEngine/PrimeEngine.cpp.o CMakeFiles/PrimeEngine.dir/Source/PrimeEngine/Managers/SpriteManager.cpp.o CMakeFiles/PrimeEngine.dir/Source/PrimeEngine/Window.cpp.o CMakeFiles/PrimeEngine.dir/Source/PrimeEngine/Math/Vector2.cpp.o | /usr/lib/libSDL2main.a /usr/lib/libSDL2-2.0.so.0.2800.5 /usr/lib/libSDL2_image.so
+build PrimeEngine: CXX_EXECUTABLE_LINKER__PrimeEngine_Debug CMakeFiles/PrimeEngine.dir/main.cpp.o CMakeFiles/PrimeEngine.dir/Source/Game/GameManager.cpp.o CMakeFiles/PrimeEngine.dir/Source/PrimeEngine/PrimeEngine.cpp.o CMakeFiles/PrimeEngine.dir/Source/PrimeEngine/Managers/SpriteManager.cpp.o CMakeFiles/PrimeEngine.dir/Source/PrimeEngine/Window.cpp.o CMakeFiles/PrimeEngine.dir/Source/PrimeEngine/Math/Vector2.cpp.o CMakeFiles/PrimeEngine.dir/Source/PrimeEngine/Components/Player/Player.cpp.o | /usr/lib/libSDL2main.a /usr/lib/libSDL2-2.0.so.0.2800.5 /usr/lib/libSDL2_image.so
   FLAGS = -g
   LINK_LIBRARIES = /usr/lib/libSDL2main.a  /usr/lib/libSDL2-2.0.so.0.2800.5  /usr/lib/libSDL2_image.so
   OBJECT_DIR = CMakeFiles/PrimeEngine.dir

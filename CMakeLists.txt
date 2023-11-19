@@ -24,6 +24,8 @@ add_executable(PrimeEngine main.cpp
         Source/PrimeEngine/Components/ECS.h
         Source/PrimeEngine/Components/Components.h
         Source/PrimeEngine/Components/Transform.h
+        Source/PrimeEngine/Components/Player/Player.cpp
+        Source/PrimeEngine/Components/Player/Player.h
 )
 
 target_link_libraries(PrimeEngine

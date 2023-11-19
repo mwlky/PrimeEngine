@@ -1,5 +1,4 @@
 #include "GameManager.h"
-#include "../PrimeEngine/Math/Vector2.h"
 
 #define LOG(X) std::cout<< X << std::endl;
 
@@ -8,7 +7,7 @@ using namespace Prime;
 namespace Application {
 
     PrimeEngine engine;
-    Entity entity;
+    Player* player;
 
     void GameManager::Init() {
 
@@ -17,7 +16,7 @@ namespace Application {
     }
 
     void GameManager::Start() {
-        entity.AddComponent<Sprite>("../Assets/Grass1.png");
+        player = new Player("../Assets/Grass1.png");
     }
 
     void GameManager::Render() {
@@ -25,6 +24,6 @@ namespace Application {
     }
 
     void GameManager::Tick() {
-        entity.TickComponents();
+        player->TickPlayer();
     }
 }

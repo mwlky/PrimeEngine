@@ -7,6 +7,7 @@
 
 #include "ECS.h"
 #include "Sprite.h"
+#include "Transform.h"
 
 namespace Prime{
 
