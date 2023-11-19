@@ -8,7 +8,7 @@ using namespace Prime;
 namespace Application {
 
     PrimeEngine engine;
-    Sprite* testSprite;
+    Entity entity;
 
     void GameManager::Init() {
 
@@ -17,15 +17,14 @@ namespace Application {
     }
 
     void GameManager::Start() {
-
-        testSprite = new Sprite("../Assets/Grass1.png");
+        entity.AddComponent<Sprite>("../Assets/Grass1.png");
     }
 
     void GameManager::Render() {
-        testSprite->Draw();
+
     }
 
     void GameManager::Tick() {
-
+        entity.TickComponents();
     }
 }

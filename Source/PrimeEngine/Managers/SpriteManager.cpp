@@ -25,7 +25,10 @@ namespace Prime {
     }
 
     void SpriteManager::Draw(SDL_Texture *texture, SDL_Rect destinationPosition) {
-
-        SDL_RenderCopy(Prime::Window::Renderer, texture, NULL, &destinationPosition);
+        if(texture != nullptr){
+            SDL_RenderCopy(Prime::Window::Renderer, texture, NULL, &destinationPosition);
+        } else{
+            std::cerr << "No texture find to draw" << std::endl;
+        }
     }
 } // PrimeEngine

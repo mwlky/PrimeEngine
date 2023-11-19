@@ -99,9 +99,9 @@ build CMakeFiles/PrimeEngine.dir/Source/PrimeEngine/Math/Vector2.cpp.o: CXX_COMP
 #############################################
 # Link the executable PrimeEngine
 
-build PrimeEngine: CXX_EXECUTABLE_LINKER__PrimeEngine_Debug CMakeFiles/PrimeEngine.dir/main.cpp.o CMakeFiles/PrimeEngine.dir/Source/Game/GameManager.cpp.o CMakeFiles/PrimeEngine.dir/Source/PrimeEngine/PrimeEngine.cpp.o CMakeFiles/PrimeEngine.dir/Source/PrimeEngine/Managers/SpriteManager.cpp.o CMakeFiles/PrimeEngine.dir/Source/PrimeEngine/Window.cpp.o CMakeFiles/PrimeEngine.dir/Source/PrimeEngine/Math/Vector2.cpp.o | /usr/lib/libSDL2main.a /usr/lib/libSDL2-2.0.so.0.2800.4 /usr/lib/libSDL2_image.so
+build PrimeEngine: CXX_EXECUTABLE_LINKER__PrimeEngine_Debug CMakeFiles/PrimeEngine.dir/main.cpp.o CMakeFiles/PrimeEngine.dir/Source/Game/GameManager.cpp.o CMakeFiles/PrimeEngine.dir/Source/PrimeEngine/PrimeEngine.cpp.o CMakeFiles/PrimeEngine.dir/Source/PrimeEngine/Managers/SpriteManager.cpp.o CMakeFiles/PrimeEngine.dir/Source/PrimeEngine/Window.cpp.o CMakeFiles/PrimeEngine.dir/Source/PrimeEngine/Math/Vector2.cpp.o | /usr/lib/libSDL2main.a /usr/lib/libSDL2-2.0.so.0.2800.5 /usr/lib/libSDL2_image.so
   FLAGS = -g
-  LINK_LIBRARIES = /usr/lib/libSDL2main.a  /usr/lib/libSDL2-2.0.so.0.2800.4  /usr/lib/libSDL2_image.so
+  LINK_LIBRARIES = /usr/lib/libSDL2main.a  /usr/lib/libSDL2-2.0.so.0.2800.5  /usr/lib/libSDL2_image.so
   OBJECT_DIR = CMakeFiles/PrimeEngine.dir
   POST_BUILD = :
   PRE_LINK = :

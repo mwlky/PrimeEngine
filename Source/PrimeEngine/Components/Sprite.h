@@ -13,14 +13,12 @@ namespace Prime {
         Sprite(const char *texturePath) {
             m_Texture = SpriteManager::LoadTexture(texturePath);
 
-
-
             m_TextureRect.x = 510;
             m_TextureRect.y = 360;
             m_TextureRect.w = m_TextureRect.h = 128;
         }
 
-        void Draw() override {
+        void Tick() override {
             SpriteManager::Draw(m_Texture, m_TextureRect);
         }
 
