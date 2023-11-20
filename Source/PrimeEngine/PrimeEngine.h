@@ -26,15 +26,17 @@ namespace Prime {
 
         void CreateWindow(const char *title, int xPos, int yPos, int width, int height);
 
+        typedef std::function<void()> OnKeyDownEventFunction;
 
+        static SDL_Event m_Event;
 
     private:
         void Clear();
-        void HandleWindowEvents();
+        void HandleEvents();
 
         Window *m_Window = nullptr;
         bool m_IsRunning;
-        SDL_Event event;
+
 
         const int FPS = 60;
         const int frameDelay = 1000 / FPS;

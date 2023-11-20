@@ -1,6 +1,9 @@
 #include "PrimeEngine.h"
 
 namespace Prime {
+
+    SDL_Event Prime::PrimeEngine::m_Event;
+
     PrimeEngine::PrimeEngine() {
         m_IsRunning = true;
     }
@@ -17,10 +20,16 @@ namespace Prime {
         std::cout << "Game cleaned" << std::endl;
     }
 
-    void PrimeEngine::HandleWindowEvents() {
-        SDL_PollEvent(&event);
+    void PrimeEngine::HandleEvents() {
+        SDL_PollEvent(&m_Event);
 
-        switch (event.type) {
+        // Important on Linux!
+        // The SDL_MOUSEMOTION Eventtracker slows down everything by A LOT on linux.
+        // We can still track mouseposition with functions, so don't worry about it too much.
+        // My theory is, that it just tracks IF you move the mouse.
+        SDL_EventState(SDL_MOUSEMOTION, SDL_IGNORE);
+
+        switch (m_Event.type) {
             case SDL_QUIT:{
                 m_IsRunning = false;
             }
@@ -40,7 +49,7 @@ namespace Prime {
 
             SDL_RenderClear(Prime::Window::Renderer);
 
-            HandleWindowEvents();
+            HandleEvents();
             tick();
             renderFunction();
 
