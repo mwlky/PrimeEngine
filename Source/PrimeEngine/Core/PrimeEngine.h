@@ -4,11 +4,11 @@
 #include <iostream>
 #include <chrono>
 #include <functional>
-#include "Window.h"
-#include "Managers/SpriteManager.h"
-#include "Components/Sprite.h"
-#include "Components/Player/Player.h"
-#include "Math/Vector2.h"
+#include "../Window.h"
+#include "../Managers/SpriteManager.h"
+#include "../Components/Sprite.h"
+#include "../Components/Player/Player.h"
+#include "../Math/Vector2.h"
 
 namespace Prime {
 

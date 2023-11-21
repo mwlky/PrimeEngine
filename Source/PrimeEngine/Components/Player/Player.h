@@ -2,7 +2,9 @@
 #define PRIMEENGINE_PLAYER_H
 
 #include "../Components.h"
-#include "../../PrimeEngine.h"
+#include "../../Core/PrimeEngine.h"
+#include "../../Events/Event.h"
+#include "../../Events/EventHandler.h"
 
 namespace Prime {
 
@@ -12,6 +14,8 @@ namespace Prime {
 
         void TickPlayer();
         void RenderPlayer();
+
+//        void Test(const Event<MouseEvents>& event);
 
     private:
         void HandlePlayerInput();

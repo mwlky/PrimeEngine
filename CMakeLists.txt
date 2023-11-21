@@ -12,8 +12,8 @@ include_directories(${SDL2_IMAGE_INCLUDE_DIRS})
 add_executable(PrimeEngine main.cpp
         Source/Game/GameManager.cpp
         Source/Game/GameManager.h
-        Source/PrimeEngine/PrimeEngine.cpp
-        Source/PrimeEngine/PrimeEngine.h
+        Source/PrimeEngine/Core/PrimeEngine.cpp
+        Source/PrimeEngine/Core/PrimeEngine.h
         Source/PrimeEngine/Window.h
         Source/PrimeEngine/Managers/SpriteManager.cpp
         Source/PrimeEngine/Managers/SpriteManager.h
@@ -26,6 +26,13 @@ add_executable(PrimeEngine main.cpp
         Source/PrimeEngine/Components/Transform.h
         Source/PrimeEngine/Components/Player/Player.cpp
         Source/PrimeEngine/Components/Player/Player.h
+        Source/PrimeEngine/Events/Event.h
+        Source/PrimeEngine/Events/EventDispatcher.h
+        Source/PrimeEngine/Events/WindowEvents.h
+        Source/PrimeEngine/Events/MouseEvents.h
+        Source/PrimeEngine/Events/KeyEvents.h
+        Source/PrimeEngine/Events/EventHandler.cpp
+        Source/PrimeEngine/Events/EventHandler.h
 )
 
 target_link_libraries(PrimeEngine

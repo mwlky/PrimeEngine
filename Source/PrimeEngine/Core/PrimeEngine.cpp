@@ -1,4 +1,5 @@
 #include "PrimeEngine.h"
+#include "../Events/EventHandler.h"
 
 namespace Prime {
 
@@ -33,6 +34,13 @@ namespace Prime {
             case SDL_QUIT:{
                 m_IsRunning = false;
             }
+//            case SDL_KEYDOWN:
+//                if(m_Event.key.keysym.sym){
+//                    MouseButtonDownEvent mouseButtonDownEvent;
+//                    mouseButtonDownEvent.Button = 2;
+//                    SEND_MOUSE_EVENT(mouseButtonDownEvent);
+//                }
+//                break;
         }
     }
 

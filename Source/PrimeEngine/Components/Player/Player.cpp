@@ -7,6 +7,7 @@ namespace Prime {
         m_Entity = entity;
         m_Entity.AddComponent<Transform>();
         m_Sprite = m_Entity.AddComponent<Sprite>(playerSprite);
+//        ADD_MOUSE_EVENT_LISTENER(MouseEvents::MouseButtonDown, Player::Test, this);
     }
 
     void Player::TickPlayer() {
@@ -38,6 +39,9 @@ namespace Prime {
                     break;
             }
         }
-
     }
+
+//    void Player::Test(const Event<MouseEvents> &event) {
+//        std::cout << "test" << std::endl;
+//    }
 } // Prime
