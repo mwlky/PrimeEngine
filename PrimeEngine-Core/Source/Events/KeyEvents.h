@@ -40,8 +40,7 @@ namespace Prime
 
         ~KeyUpEvent() override = default;
 
-        int KeyCode = -1;
-        // ASCII of the key that was pressed down
+        KeyCode KeyCode;
     };
 }
 

@@ -9,23 +9,31 @@ namespace Prime{
     class Transform : public Component{
 
     public:
+        Vector2 Velocity;
+        Vector2 Position;
+        Vector2 Scale;
+        
         Transform(){
-            position = Vector2().Zero();
-            scale = (*new Vector2(1,1));
+            Position = Vector2().Zero();
+            Scale = *new Vector2(1,1);
+            Velocity = Vector2().Zero();
         }
 
         Transform(Vector2 position){
-            this->position = position;
-            scale = (*new Vector2(1,1));
+            this->Position = position;
+            Scale = *new Vector2(1,1);
         }
 
         Transform(Vector2 position, Vector2 scale){
-            this->position = position;
-            this->scale = scale;
+            this->Position = position;
+            this->Scale = scale;
         }
 
-        Vector2 position;
-        Vector2 scale;
+        void Tick() override
+        {
+            Position.x += Velocity.x;
+            Position.y += Velocity.y;
+        }
     };
 
 }

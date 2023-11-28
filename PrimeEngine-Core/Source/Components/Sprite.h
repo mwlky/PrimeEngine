@@ -4,6 +4,7 @@
 #include "SDL.h"
 #include "../Managers/SpriteManager.h"
 #include "Components.h"
+#include "Transform.h"
 
 namespace Prime {
 
@@ -13,12 +14,15 @@ namespace Prime {
         Sprite(const char *texturePath) {
             m_Texture = SpriteManager::LoadTexture(texturePath);
 
-            m_TextureRect.x = 510;
-            m_TextureRect.y = 360;
+            m_TextureRect.x = 0;
+            m_TextureRect.y = 0;
             m_TextureRect.w = m_TextureRect.h = 128;
         }
 
         void Tick() override {
+            m_TextureRect.x = entity->GetComponent<Transform>()->Position.x;
+            m_TextureRect.y = entity->GetComponent<Transform>()->Position.y;
+            
             SpriteManager::Draw(m_Texture, m_TextureRect);
         }
 
@@ -26,7 +30,6 @@ namespace Prime {
 
         SDL_Texture *m_Texture;
         SDL_Rect m_TextureRect;
-
     };
 
 }

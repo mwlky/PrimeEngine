@@ -29,7 +29,8 @@ namespace Prime {
 
     private:
         void Clear();
-        void InvokePlayerKeyEvents();
+        void InvokeKeyDownEvents();
+        void InvokeKeyUpEvents();
         void HandleEvents();
 
         SDL_Event m_Event; 

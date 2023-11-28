@@ -20,7 +20,7 @@ namespace Prime
         std::cout << "Game cleaned" << std::endl;
     }
 
-    void PrimeEngine::InvokePlayerKeyEvents()
+    void PrimeEngine::InvokeKeyDownEvents()
     {
         if (m_Event.type != SDL_KEYDOWN)
         {
@@ -62,6 +62,48 @@ namespace Prime
         }
     }
 
+    void PrimeEngine::InvokeKeyUpEvents()
+    {
+        if (m_Event.type != SDL_KEYUP)
+        {
+            return;
+        }
+        
+        switch (m_Event.key.keysym.sym)
+        {
+        case SDLK_w:
+            {
+                KeyUpEvent keyUpEvent;
+                keyUpEvent.KeyCode = KeyCode::W;
+                SEND_KEY_EVENT(keyUpEvent);
+                break;
+            }
+
+        case SDLK_a:
+            {
+                KeyUpEvent keyUpEvent;
+                keyUpEvent.KeyCode = KeyCode::A;
+                SEND_KEY_EVENT(keyUpEvent);
+                break;
+            }
+        case SDLK_s:
+            {
+                KeyUpEvent keyUpEvent;
+                keyUpEvent.KeyCode = KeyCode::S;
+                SEND_KEY_EVENT(keyUpEvent);
+                break;
+            }
+
+        case SDLK_d:
+            {
+                KeyUpEvent keyUpEvent;
+                keyUpEvent.KeyCode = KeyCode::D;
+                SEND_KEY_EVENT(keyUpEvent);
+                break;
+            }
+        }
+    }
+
     void PrimeEngine::HandleEvents()
     {
         SDL_PollEvent(&m_Event);
@@ -80,7 +122,8 @@ namespace Prime
             }
         }
         
-        InvokePlayerKeyEvents();        
+        InvokeKeyDownEvents();
+        InvokeKeyUpEvents();
     }
 
     void PrimeEngine::InitEngine(const PrimeEngine::TickFunction& tick, const PrimeEngine::StartFunction& startFunction,
@@ -94,13 +137,14 @@ namespace Prime
         while (m_IsRunning)
         {
             frameStart = SDL_GetTicks();
-
+            
             SDL_RenderClear(Prime::Window::Renderer);
 
             HandleEvents();
             tick();
             renderFunction();
-
+            SDL_SetRenderDrawColor(Window::Renderer, 150, 150, 185, 255);
+            
             SDL_RenderPresent(Prime::Window::Renderer);
 
             frameTime = SDL_GetTicks() - frameStart;

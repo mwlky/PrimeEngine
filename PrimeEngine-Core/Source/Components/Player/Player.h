@@ -16,12 +16,14 @@ namespace Prime {
         void RenderPlayer();
 
         void MovePlayer(const Event<KeyEvents>& event);
-
+        void StopPlayer(const Event<KeyEvents>& event);
+        
     private:
+        int m_Speed = 5;
         
-        
-        Entity m_Entity;
+        Entity m_Entity {};
         Sprite* m_Sprite = nullptr;
+        Transform* m_Transform = nullptr;
     };
 
 } // Prime
