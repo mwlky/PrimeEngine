@@ -9,12 +9,12 @@ namespace Application {
 
     void GameManager::Init() {
 
-        engine.CreateWindow("Game", 0, 0, 1020, 720);
-        engine.InitEngine(GameManager::Tick, GameManager::Start, GameManager::Render);
+        engine.CreateWindow("Game", 450 , 180, 1020, 720);
+        engine.InitEngine(Tick, Start, Render);
     }
 
     void GameManager::Start() {
-        player = new Prime::Player("../Assets/Grass1.png");
+        player = new Prime::Player("../PrimeEngine-Game/Assets/Grass1.png");
     }
 
     void GameManager::Render() {
