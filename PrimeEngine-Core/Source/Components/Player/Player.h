@@ -15,11 +15,11 @@ namespace Prime {
         void TickPlayer();
         void RenderPlayer();
 
-//        void Test(const Event<MouseEvents>& event);
+        void MovePlayer(const Event<KeyEvents>& event);
 
     private:
-        void HandlePlayerInput();
-
+        
+        
         Entity m_Entity;
         Sprite* m_Sprite = nullptr;
     };

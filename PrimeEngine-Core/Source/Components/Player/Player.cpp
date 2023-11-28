@@ -7,41 +7,35 @@ namespace Prime {
         m_Entity = entity;
         m_Entity.AddComponent<Transform>();
         m_Sprite = m_Entity.AddComponent<Sprite>(playerSprite);
-//        ADD_MOUSE_EVENT_LISTENER(MouseEvents::MouseButtonDown, Player::Test, this);
+
+        ADD_KEY_EVENT_LISTENER(KeyEvents::KeyDown, Player::MovePlayer, this);        
     }
 
     void Player::TickPlayer() {
         m_Entity.TickComponents();
-        HandlePlayerInput();
     }
 
-    void Player::HandlePlayerInput() {
+    void Player::MovePlayer(const Event<KeyEvents>& event)
+    {
+        KeyDownEvent key = event.ToType<KeyDownEvent>();
 
-        if (Prime::PrimeEngine::m_Event.type == SDL_KEYDOWN) {
-            switch (Prime::PrimeEngine::m_Event.key.keysym.sym) {
-                case SDLK_w:
-                    std::cout << "Move up" << std::endl;
-                    break;
+        switch (key.KeyCode)
+        {
+        case KeyCode::W:
+            std::cout << "Moving player up" << std::endl;
+            break;
+            
+        case KeyCode::A:
+            std::cout << "Moving player left" << std::endl;
+            break;
 
-                case SDLK_a:
-                    std::cout << "Move left" << std::endl;
-                    break;
+        case KeyCode::S:
+            std::cout << "Moving player down" << std::endl;
+            break;
 
-                case SDLK_s:
-                    std::cout << "Move down" << std::endl;
-                    break;
-
-                case SDLK_d:
-                    std::cout << "Move right" << std::endl;
-                    break;
-
-                default:
-                    break;
-            }
+        case KeyCode::D:
+            std::cout << "Moving player right" << std::endl;
+            break;
         }
     }
-
-//    void Player::Test(const Event<MouseEvents> &event) {
-//        std::cout << "test" << std::endl;
-//    }
 } // Prime

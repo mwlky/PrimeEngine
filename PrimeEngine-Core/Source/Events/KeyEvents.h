@@ -3,33 +3,46 @@
 
 #include "Event.h"
 
-namespace Prime{
-
-    enum class KeyEvents{
+namespace Prime
+{
+    enum class KeyEvents
+    {
         KeyDown,
         KeyUp
     };
 
-    class KeyDownEvent : public Event<KeyEvents>{
-
-    public:
-        KeyDownEvent() : Event<KeyEvents>(KeyEvents::KeyDown, "KeyDownEvent"){}
-        ~KeyDownEvent() override = default;
-
-        int KeyCode = -1;
-        // ASCII of the key that was pressed down
+    enum class KeyCode
+    {
+        W,
+        A,
+        S,
+        D
     };
 
-    class KeyUpEvent : public Event<KeyEvents>{
-
+    class KeyDownEvent : public Event<KeyEvents>
+    {
     public:
-        KeyUpEvent() : Event<KeyEvents>(KeyEvents::KeyUp, "KeyUpEvent"){}
+        KeyDownEvent() : Event<KeyEvents>(KeyEvents::KeyDown, "KeyDownEvent")
+        {
+        }
+
+        ~KeyDownEvent() override = default;
+
+        KeyCode KeyCode;
+    };
+
+    class KeyUpEvent : public Event<KeyEvents>
+    {
+    public:
+        KeyUpEvent() : Event<KeyEvents>(KeyEvents::KeyUp, "KeyUpEvent")
+        {
+        }
+
         ~KeyUpEvent() override = default;
 
         int KeyCode = -1;
         // ASCII of the key that was pressed down
     };
-
 }
 
 #endif //PRIMEENGINE_KEYEVENTS_H
