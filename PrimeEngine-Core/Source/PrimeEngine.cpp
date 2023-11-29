@@ -29,36 +29,7 @@ namespace Prime
         
         switch (m_Event.key.keysym.sym)
         {
-        case SDLK_w:
-            {
-                KeyDownEvent keyDownEvent;
-                keyDownEvent.KeyCode = KeyCode::W;
-                SEND_KEY_EVENT(keyDownEvent);
-                break;
-            }
-
-        case SDLK_a:
-            {
-                KeyDownEvent keyDownEvent;
-                keyDownEvent.KeyCode = KeyCode::A;
-                SEND_KEY_EVENT(keyDownEvent);
-                break;
-            }
-        case SDLK_s:
-            {
-                KeyDownEvent keyDownEvent;
-                keyDownEvent.KeyCode = KeyCode::S;
-                SEND_KEY_EVENT(keyDownEvent);
-                break;
-            }
-
-        case SDLK_d:
-            {
-                KeyDownEvent keyDownEvent;
-                keyDownEvent.KeyCode = KeyCode::D;
-                SEND_KEY_EVENT(keyDownEvent);
-                break;
-            }
+            // TODO: Implements Key Down Events
         }
     }
 
@@ -71,36 +42,7 @@ namespace Prime
         
         switch (m_Event.key.keysym.sym)
         {
-        case SDLK_w:
-            {
-                KeyUpEvent keyUpEvent;
-                keyUpEvent.KeyCode = KeyCode::W;
-                SEND_KEY_EVENT(keyUpEvent);
-                break;
-            }
-
-        case SDLK_a:
-            {
-                KeyUpEvent keyUpEvent;
-                keyUpEvent.KeyCode = KeyCode::A;
-                SEND_KEY_EVENT(keyUpEvent);
-                break;
-            }
-        case SDLK_s:
-            {
-                KeyUpEvent keyUpEvent;
-                keyUpEvent.KeyCode = KeyCode::S;
-                SEND_KEY_EVENT(keyUpEvent);
-                break;
-            }
-
-        case SDLK_d:
-            {
-                KeyUpEvent keyUpEvent;
-                keyUpEvent.KeyCode = KeyCode::D;
-                SEND_KEY_EVENT(keyUpEvent);
-                break;
-            }
+        // TODO: Implement KeyUp events
         }
     }
 

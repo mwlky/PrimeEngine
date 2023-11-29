@@ -16,7 +16,24 @@ namespace Prime {
 
             m_TextureRect.x = 0;
             m_TextureRect.y = 0;
-            m_TextureRect.w = m_TextureRect.h = 128;
+            m_TextureRect.w = m_TextureRect.h = 64;
+        }
+
+        Sprite(SDL_Texture* texture) {
+            m_Texture = texture;
+
+            m_TextureRect.x = 0;
+            m_TextureRect.y = 0;
+            m_TextureRect.w = m_TextureRect.h = 64;
+        }
+
+        void ChangeSprite(SDL_Texture* texture)
+        {
+            m_Texture = texture;
+            
+            m_TextureRect.x = entity->GetComponent<Transform>()->Position.x;
+            m_TextureRect.y = entity->GetComponent<Transform>()->Position.y;
+            m_TextureRect.w = m_TextureRect.h = 64;
         }
 
         void Tick() override {

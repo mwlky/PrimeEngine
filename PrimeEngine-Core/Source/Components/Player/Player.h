@@ -7,23 +7,36 @@
 #include "../../Events/EventHandler.h"
 
 namespace Prime {
-
+    
+    struct PlayerAnimationPack
+    {
+        std::vector<SDL_Texture*> WalkDownTextures;
+        std::vector<SDL_Texture*> WalkRightTextures;
+        std::vector<SDL_Texture*> WalkLeftTextures;
+        std::vector<SDL_Texture*> WalkUpTextures;
+    };
+    
     class Player {
     public:
-        Player(const char* playerSprite);
+        Player(PlayerAnimationPack animation_pack, Vector2 startPosition);
 
         void TickPlayer();
         void RenderPlayer();
-
-        void MovePlayer(const Event<KeyEvents>& event);
-        void StopPlayer(const Event<KeyEvents>& event);
         
     private:
+
+        void PlayAnimation(std::vector<SDL_Texture*> animations, float delay);
+
+        int m_CurrentAnimationIndex = 0;
         int m_Speed = 5;
-        
-        Entity m_Entity {};
-        Sprite* m_Sprite = nullptr;
+
+        float m_LastAnimationTime = 0;
+
         Transform* m_Transform = nullptr;
+        Sprite* m_Sprite = nullptr;
+
+        PlayerAnimationPack m_Animations {};
+        Entity m_Entity {};
     };
 
 } // Prime

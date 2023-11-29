@@ -2,65 +2,68 @@
 
 namespace Prime
 {
-    Player::Player(const char* playerSprite)
+    Player::Player(PlayerAnimationPack animation_pack, Vector2 startPosition)
     {
         Entity entity;
 
         m_Entity = entity;
         m_Transform = m_Entity.AddComponent<Transform>();
-        m_Sprite = m_Entity.AddComponent<Sprite>(playerSprite);
+        m_Sprite = m_Entity.AddComponent<Sprite>(animation_pack.WalkDownTextures[0]);
+        m_Animations = animation_pack;
 
-        ADD_KEY_EVENT_LISTENER(KeyEvents::KeyDown, Player::MovePlayer, this);
-        
-        ADD_KEY_EVENT_LISTENER(KeyEvents::KeyUp, Player::StopPlayer, this);
+        m_Transform->Position = startPosition;
     }
 
     void Player::TickPlayer()
     {
         m_Entity.TickComponents();
-    }
 
-    void Player::MovePlayer(const Event<KeyEvents>& event)
-    {
-        const KeyDownEvent key = event.ToType<KeyDownEvent>();
+        const Uint8* keyStates = SDL_GetKeyboardState(NULL);
 
-        if (key.KeyCode == KeyCode::W)
+        if (keyStates[SDL_SCANCODE_W])
         {
             m_Transform->Velocity = Vector2().Up() * -1 * m_Speed;
+            PlayAnimation(m_Animations.WalkUpTextures, 200);
         }
-        if (key.KeyCode == KeyCode::A)
+        else if (keyStates[SDL_SCANCODE_A])
         {
             m_Transform->Velocity = Vector2().Left() * m_Speed;
+            PlayAnimation(m_Animations.WalkLeftTextures, 110);
         }
-        if (key.KeyCode == KeyCode::S)
+        else if (keyStates[SDL_SCANCODE_S])
         {
             m_Transform->Velocity = Vector2().Down() * -1 * m_Speed;
+            PlayAnimation(m_Animations.WalkDownTextures, 200);
         }
-        if (key.KeyCode == KeyCode::D)
+        else if (keyStates[SDL_SCANCODE_D])
         {
             m_Transform->Velocity = Vector2().Right() * m_Speed;
+            PlayAnimation(m_Animations.WalkRightTextures, 110);
+        }
+        else
+        {
+            m_Transform->Velocity = Vector2().Zero();
         }
     }
 
-    void Player::StopPlayer(const Event<KeyEvents>& event)
+    void Player::PlayAnimation(std::vector<SDL_Texture*> animations, float delay)
     {
-        KeyUpEvent key = event.ToType<KeyUpEvent>();
+        Uint32 currentTime = SDL_GetTicks();
+        Uint32 frameTime = currentTime - m_LastAnimationTime;
 
-        if (key.KeyCode == KeyCode::W)
+        if (frameTime >= delay)
         {
-            m_Transform->Velocity = Vector2().Zero();
+            m_CurrentAnimationIndex = (m_CurrentAnimationIndex + 1) % animations.size();
+            m_LastAnimationTime = currentTime;
         }
-        if (key.KeyCode == KeyCode::A)
+        else
         {
-            m_Transform->Velocity = Vector2().Zero();
+            if (m_CurrentAnimationIndex >= animations.size())
+            {
+                m_CurrentAnimationIndex = 0;
+            }
         }
-        if (key.KeyCode == KeyCode::S)
-        {
-            m_Transform->Velocity = Vector2().Zero();
-        }
-        if (key.KeyCode == KeyCode::D)
-        {
-            m_Transform->Velocity = Vector2().Zero();
-        }
+
+        m_Entity.GetComponent<Sprite>()->ChangeSprite(animations[m_CurrentAnimationIndex]);
     }
 } // Prime

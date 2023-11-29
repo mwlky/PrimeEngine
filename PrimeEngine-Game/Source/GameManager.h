@@ -13,6 +13,8 @@ namespace Application {
         static void Tick();
         static void Start();
         static void Render();
+
+        static Prime::PlayerAnimationPack GetPlayerAnimationPack();
     };
 
 } // Application
