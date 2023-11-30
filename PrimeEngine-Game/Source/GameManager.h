@@ -1,9 +1,8 @@
 #ifndef PRIMEENGINE_GAMEMANAGER_H
 #define PRIMEENGINE_GAMEMANAGER_H
 
-#include "PlayerAnimations.h"
 #include "PrimeEngine.h"
-#include "Player/Player.h"
+#include "Player/PlayerController.h"
 
 namespace Application {
 
@@ -16,9 +15,8 @@ namespace Application {
         void Start();
         void Render();
 
-        Player* m_Player = nullptr;
+        PlayerController m_PlayerController {};
         Prime::PrimeEngine m_Engine {};
-        
     };
 
 } // Application

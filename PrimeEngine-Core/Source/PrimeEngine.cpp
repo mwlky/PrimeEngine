@@ -80,7 +80,11 @@ namespace Prime
         {
             frameStart = SDL_GetTicks();
             
-            SDL_RenderClear(Prime::Window::Renderer);
+            if(SDL_RenderClear(Window::Renderer) != 0)
+            {
+                std::cerr << "Renderer error" << SDL_GetError() << std::endl;
+                break;
+            }
 
             HandleEvents();
             tick();

@@ -1,8 +1,5 @@
 #include "GameManager.h"
 
-#include "PlayerAnimations.h"
-#include "Player/Player.h"
-
 #define LOG(X) std::cout<< X << std::endl
 
 namespace Application
@@ -13,23 +10,21 @@ namespace Application
         m_Engine.InitEngine([this] { Tick(); },
                             [this] { Start(); },
                             [this] { Render(); });
+
     }
 
     void GameManager::Start()
     {
-        PlayerAnimations player_animations;
-        
-        PlayerAnimationPack animations = player_animations.GetPlayerAnimationPack();
-        
-        m_Player = new Player(animations, Prime::Vector2(500, 400));
+        m_PlayerController.Init();
     }
 
     void GameManager::Tick()
     {
-        m_Player->TickPlayer();
+        m_PlayerController.Tick();
     }
 
     void GameManager::Render()
     {
+        m_PlayerController.Render();
     }
 }

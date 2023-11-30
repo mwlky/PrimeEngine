@@ -1,5 +1,7 @@
 #include "Window.h"
 
+#include <iostream>
+
 SDL_Renderer *Prime::Window::Renderer = nullptr;
 SDL_Window *Prime::Window::CurrentWindow = nullptr;
 
@@ -11,6 +13,12 @@ Prime::Window::Window(const char *title, int xPos, int yPos, int width, int heig
     if (m_Window) {
         m_Renderer = SDL_CreateRenderer(m_Window, -1, SDL_RENDERER_ACCELERATED);
         m_Surface = SDL_GetWindowSurface(CurrentWindow);
+
+        if(m_Renderer == nullptr)
+        {
+            std::cerr << "Unable to create renderer: " << SDL_GetError() << std::endl;
+            return;
+        }
 
         Renderer = m_Renderer;
         CurrentWindow = m_Window;

@@ -11,7 +11,8 @@ namespace Application {
     
     class Player {
     public:
-        Player(Application::PlayerAnimationPack animation_pack, Prime::Vector2 startPosition);
+        Player() = default;
+        Player(PlayerAnimationPack animation_pack, Prime::Vector2 startPosition);
 
         void TickPlayer();
         void RenderPlayer();

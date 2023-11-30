@@ -12,7 +12,7 @@ namespace Application
         m_Transform = m_Entity.AddComponent<Transform>();
         m_Sprite = m_Entity.AddComponent<Sprite>(animation_pack.WalkDownTextures[0]);
         m_Animations = animation_pack;
-
+        
         m_Transform->Position = startPosition;
     }
 
@@ -21,7 +21,7 @@ namespace Application
         m_Entity.TickComponents();
 
         const Uint8* keyStates = SDL_GetKeyboardState(NULL);
-
+        
         if (keyStates[SDL_SCANCODE_W])
         {
             m_Transform->Velocity = Vector2().Up() * -1 * m_Speed;
@@ -46,6 +46,11 @@ namespace Application
         {
             m_Transform->Velocity = Vector2().Zero();
         }
+    }
+
+    void Player::RenderPlayer()
+    {
+        
     }
 
     void Player::PlayAnimation(std::vector<SDL_Texture*> animations, float delay)
