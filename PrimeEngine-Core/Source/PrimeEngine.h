@@ -7,7 +7,6 @@
 #include "Window.h"
 #include "Managers/SpriteManager.h"
 #include "Components/Sprite.h"
-#include "Components/Player/Player.h"
 #include "Math/Vector2.h"
 #include "Events/EventHandler.h"
 
@@ -22,8 +21,8 @@ namespace Prime {
         typedef std::function<void()> StartFunction;
         typedef std::function<void()> RenderFunction;
 
-        void InitEngine(const PrimeEngine::TickFunction &tick, const PrimeEngine::StartFunction &startFunction,
-                        const PrimeEngine::RenderFunction &renderFunction);
+        void InitEngine(const TickFunction &tick, const StartFunction &startFunction,
+                        const RenderFunction &renderFunction);
 
         void CreateWindow(const char *title, int xPos, int yPos, int width, int height);
 

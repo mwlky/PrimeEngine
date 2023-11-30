@@ -1,7 +1,9 @@
 #ifndef PRIMEENGINE_GAMEMANAGER_H
 #define PRIMEENGINE_GAMEMANAGER_H
 
+#include "PlayerAnimations.h"
 #include "PrimeEngine.h"
+#include "Player/Player.h"
 
 namespace Application {
 
@@ -10,11 +12,13 @@ namespace Application {
         void Init();
 
     private:
-        static void Tick();
-        static void Start();
-        static void Render();
+        void Tick();
+        void Start();
+        void Render();
 
-        static Prime::PlayerAnimationPack GetPlayerAnimationPack();
+        Player* m_Player = nullptr;
+        Prime::PrimeEngine m_Engine {};
+        
     };
 
 } // Application

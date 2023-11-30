@@ -1,6 +1,8 @@
 #include "Player.h"
 
-namespace Prime
+using namespace Prime;
+
+namespace Application
 {
     Player::Player(PlayerAnimationPack animation_pack, Vector2 startPosition)
     {
