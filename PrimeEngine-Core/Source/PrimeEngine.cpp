@@ -26,10 +26,10 @@ namespace Prime
         {
             return;
         }
-        
+
         switch (m_Event.key.keysym.sym)
         {
-            // TODO: Implements Key Down Events
+    // TODO: Implements Key Down Events
         }
     }
 
@@ -39,10 +39,10 @@ namespace Prime
         {
             return;
         }
-        
+
         switch (m_Event.key.keysym.sym)
         {
-        // TODO: Implement KeyUp events
+    // TODO: Implement KeyUp events
         }
     }
 
@@ -63,13 +63,13 @@ namespace Prime
                 m_IsRunning = false;
             }
         }
-        
+
         InvokeKeyDownEvents();
         InvokeKeyUpEvents();
     }
 
-    void PrimeEngine::InitEngine(const PrimeEngine::TickFunction& tick, const PrimeEngine::StartFunction& startFunction,
-                                 const PrimeEngine::RenderFunction& renderFunction)
+    void PrimeEngine::InitEngine(const TickFunction& tick, const StartFunction& startFunction,
+                                 const RenderFunction& renderFunction)
     {
         Uint32 frameStart;
         double frameTime;
@@ -79,8 +79,8 @@ namespace Prime
         while (m_IsRunning)
         {
             frameStart = SDL_GetTicks();
-            
-            if(SDL_RenderClear(Window::Renderer) != 0)
+
+            if (SDL_RenderClear(Window::Renderer) != 0)
             {
                 std::cerr << "Renderer error" << SDL_GetError() << std::endl;
                 break;
@@ -90,7 +90,7 @@ namespace Prime
             tick();
             renderFunction();
             SDL_SetRenderDrawColor(Window::Renderer, 150, 150, 185, 255);
-            
+
             SDL_RenderPresent(Prime::Window::Renderer);
 
             frameTime = SDL_GetTicks() - frameStart;
@@ -100,7 +100,7 @@ namespace Prime
                 SDL_Delay(frameDelay - frameTime);
             }
         }
-
+        
         Clear();
     }
 } // Prime

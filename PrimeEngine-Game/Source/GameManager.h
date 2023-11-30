@@ -8,6 +8,7 @@ namespace Application {
 
     class GameManager {
     public:
+        
         void Init();
 
     private:

@@ -20,6 +20,7 @@ namespace Prime {
         typedef std::function<void()> TickFunction;
         typedef std::function<void()> StartFunction;
         typedef std::function<void()> RenderFunction;
+        typedef std::function<void()> ClearFunction;
 
         void InitEngine(const TickFunction &tick, const StartFunction &startFunction,
                         const RenderFunction &renderFunction);

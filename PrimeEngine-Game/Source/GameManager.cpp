@@ -10,7 +10,6 @@ namespace Application
         m_Engine.InitEngine([this] { Tick(); },
                             [this] { Start(); },
                             [this] { Render(); });
-
     }
 
     void GameManager::Start()
