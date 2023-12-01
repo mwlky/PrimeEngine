@@ -36,11 +36,11 @@ namespace Prime {
         template<typename T>
         T *GetComponent() const {
             auto it = m_Components.find(typeid(T).name());
-
+            
             if(it != m_Components.end()){
                 return dynamic_cast<T*>(it->second);
             }
-
+            
             return nullptr;
         };
 

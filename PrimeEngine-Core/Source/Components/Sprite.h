@@ -6,12 +6,13 @@
 #include "Components.h"
 #include "Transform.h"
 
-namespace Prime {
-
-    class Sprite: public Component {
-
+namespace Prime
+{
+    class Sprite : public Component
+    {
     public:
-        Sprite(const char *texturePath) {
+        Sprite(const char* texturePath)
+        {
             m_Texture = SpriteManager::LoadTexture(texturePath);
 
             m_TextureRect.x = 0;
@@ -19,7 +20,8 @@ namespace Prime {
             m_TextureRect.w = m_TextureRect.h = 64;
         }
 
-        Sprite(SDL_Texture* texture) {
+        Sprite(SDL_Texture* texture)
+        {
             m_Texture = texture;
 
             m_TextureRect.x = 0;
@@ -30,25 +32,25 @@ namespace Prime {
         void ChangeSprite(SDL_Texture* texture)
         {
             m_Texture = texture;
-            
+
             m_TextureRect.x = entity->GetComponent<Transform>()->Position.x;
             m_TextureRect.y = entity->GetComponent<Transform>()->Position.y;
             m_TextureRect.w = m_TextureRect.h = 64;
         }
 
-        void Tick() override {
+        void Tick() override
+        {
             m_TextureRect.x = entity->GetComponent<Transform>()->Position.x;
             m_TextureRect.y = entity->GetComponent<Transform>()->Position.y;
-            
+
+
             SpriteManager::Draw(m_Texture, m_TextureRect);
         }
 
     private:
-
-        SDL_Texture *m_Texture;
+        SDL_Texture* m_Texture;
         SDL_Rect m_TextureRect;
     };
-
 }
 
 #endif //PRIMEENGINE_SPRITE_H

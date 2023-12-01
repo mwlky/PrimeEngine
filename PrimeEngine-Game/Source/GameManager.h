@@ -2,6 +2,7 @@
 #define PRIMEENGINE_GAMEMANAGER_H
 
 #include "PrimeEngine.h"
+#include "Map/Map.h"
 #include "Player/PlayerController.h"
 
 namespace Application {
@@ -16,8 +17,13 @@ namespace Application {
         void Start();
         void Render();
 
+        Map* m_Map = nullptr;
+        
         PlayerController m_PlayerController {};
         Prime::PrimeEngine m_Engine {};
+
+        const int WINDOW_HEIGHT = 720;
+        const int WINDOW_WIDTH = 1020;
     };
 
 } // Application
