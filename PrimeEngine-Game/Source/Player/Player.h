@@ -16,6 +16,11 @@ namespace Application {
 
         void TickPlayer();
         void RenderPlayer();
+
+        Prime::Entity* GetEntity()
+        {
+            return &m_Entity;
+        }
         
     private:
 

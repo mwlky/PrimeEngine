@@ -3,6 +3,7 @@
 
 #include "ECS.h"
 #include "../Math/Vector2.h"
+#include "Math/Clamp.h"
 
 namespace Prime{
 
@@ -33,6 +34,9 @@ namespace Prime{
         {
             Position.x += Velocity.x;
             Position.y += Velocity.y;
+            
+            Position.x = Prime::Math::Clamp::ClampValue(Position.x, 670 , -10);
+            Position.y = Prime::Math::Clamp::ClampValue(Position.y, 670 , -10);
         }
     };
 

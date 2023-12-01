@@ -23,7 +23,7 @@ namespace Application {
         Prime::PrimeEngine m_Engine {};
 
         const int WINDOW_HEIGHT = 720;
-        const int WINDOW_WIDTH = 1020;
+        const int WINDOW_WIDTH = 720;
     };
 
 } // Application

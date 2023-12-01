@@ -1,18 +1,12 @@
 ﻿#include "Map.h"
 
-#include <iostream>
-
-#include "Tile.h"
-#include "Components/Sprite.h"
-#include "Managers/SpriteManager.h"
-
 namespace Application
 {
-    static std::vector<Tile*> m_Tile;
-
+    static std::vector<Tile*> m_Tiles;
+    
     void Map::TickMap()
     {
-        for (auto tile : m_Tile)
+        for (auto tile : m_Tiles)
         {
             tile->Draw();
         }
@@ -36,7 +30,7 @@ namespace Application
                             "../../PrimeEngine/PrimeEngine-Game/Assets/Map/punyworld-overworld-tileset_0.png",
                             position);
 
-                m_Tile.push_back(tile);
+                m_Tiles.push_back(tile);
             }
         } 
     }

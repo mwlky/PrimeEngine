@@ -9,6 +9,11 @@ namespace Application
         PlayerController();
         ~PlayerController();
 
+        Player* GetPlayer() const
+        {
+            return m_Player;
+        }
+
         void Init();
         void Tick();
         void Render();

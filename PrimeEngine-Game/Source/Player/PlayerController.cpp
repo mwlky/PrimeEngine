@@ -7,8 +7,6 @@ namespace Application
     
     PlayerController::PlayerController()
     {
-
-        
     }
 
     PlayerController::~PlayerController()
