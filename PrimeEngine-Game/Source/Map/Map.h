@@ -1,4 +1,7 @@
 ﻿#pragma once
+#include <vector>
+
+#include "Tile.h"
 
 namespace Application
 {
@@ -8,11 +11,10 @@ namespace Application
         Map() = default;
 
         void TickMap();
-        void DrawMap();
-        void RenderMap();
+        void DrawMap(const int& height, const int& width);
+        
     private:
-        
-        
+        void RenderMap();
     };
 }
 

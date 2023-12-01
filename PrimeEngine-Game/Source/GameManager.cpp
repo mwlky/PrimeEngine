@@ -16,7 +16,7 @@ namespace Application
 
     void GameManager::Start()
     {
-        m_Map->DrawMap();
+        m_Map->DrawMap(WINDOW_HEIGHT, WINDOW_WIDTH);
         m_PlayerController.Init();
     }
 
@@ -28,7 +28,6 @@ namespace Application
 
     void GameManager::Render()
     {
-        m_Map->RenderMap();
         m_PlayerController.Render();
     }
 }

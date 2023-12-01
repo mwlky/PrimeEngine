@@ -43,7 +43,6 @@ namespace Prime
             m_TextureRect.x = entity->GetComponent<Transform>()->Position.x;
             m_TextureRect.y = entity->GetComponent<Transform>()->Position.y;
 
-
             SpriteManager::Draw(m_Texture, m_TextureRect);
         }
 
