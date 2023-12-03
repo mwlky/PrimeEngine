@@ -13,19 +13,22 @@ project "PrimeEngine-Core"
 
       -- Include SDL
       "Libraries/SDL2/include",
-      "Libraries/SDL2_image/include"
+      "Libraries/SDL2_image/include",
+      "Libraries/SDL2_ttf/include"
    }
 
    links
    {
       "SDL2",
-      "SDL2_image"
+      "SDL2_image",
+      "SDL2_ttf"
    }
 
    libdirs
    {
       "Libraries/SDL2/lib",
-      "Libraries/SDL2_image/lib"
+      "Libraries/SDL2_image/lib",
+      "Libraries/SDL2_ttf/lib"
    }
 
    targetdir ("../Binaries/" .. OutputDir .. "/%{prj.name}")

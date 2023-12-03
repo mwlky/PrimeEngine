@@ -8,6 +8,7 @@ SDL_Window *Prime::Window::CurrentWindow = nullptr;
 Prime::Window::Window(const char *title, int xPos, int yPos, int width, int height) {
     SDL_Init(SDL_INIT_EVERYTHING);
     IMG_Init(SDL_INIT_EVERYTHING);
+    TTF_Init();
 
     m_Window = SDL_CreateWindow(title, xPos, yPos, width, height, SDL_WINDOW_SHOWN);
     if (m_Window) {
@@ -30,6 +31,8 @@ Prime::Window::Window(const char *title, int xPos, int yPos, int width, int heig
 Prime::Window::~Window() {
     SDL_DestroyWindow(CurrentWindow);
     SDL_DestroyRenderer(Renderer);
+    TTF_Quit();
+    IMG_Quit();
     SDL_Quit();
 }
 

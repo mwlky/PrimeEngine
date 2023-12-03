@@ -16,20 +16,23 @@ project "PrimeEngine-Game"
 
       -- SDL from core
       "../PrimeEngine-Core/Libraries/SDL2/include",
-      "../PrimeEngine-Core/Libraries/SDL2_image/include"
+      "../PrimeEngine-Core/Libraries/SDL2_image/include",
+      "../PrimeEngine-Core/Libraries/SDL2_ttf/include"
    }
 
    links
    {
       "PrimeEngine-Core",
       "SDL2",
-      "SDL2_image"
+      "SDL2_image",
+      "SDL2_ttf"
    }
 
     libdirs
     {
         "../PrimeEngine-Core/Libraries/SDL2/lib",
         "../PrimeEngine-Core/Libraries/SDL2_image/lib",
+        "../PrimeEngine-Core/Libraries/SDL2_ttf/lib",
 
         "../Binaries/" .. OutputDir .. "/PrimeEngine-Core"
     }
@@ -37,7 +40,8 @@ project "PrimeEngine-Game"
     postbuildcommands
     {
         '{COPY} "../PrimeEngine-Core/Libraries/SDL2/lib/SDL2.dll" "%{cfg.targetdir}"',
-        '{COPY} "../PrimeEngine-Core/Libraries/SDL2_image/lib/SDL2_image.dll" "%{cfg.targetdir}"'
+        '{COPY} "../PrimeEngine-Core/Libraries/SDL2_image/lib/SDL2_image.dll" "%{cfg.targetdir}"',
+        '{COPY} "../PrimeEngine-Core/Libraries/SDL2_ttf/lib/SDL2_ttf.dll" "%{cfg.targetdir}"'
     }
 
    targetdir ("../Binaries/" .. OutputDir .. "/%{prj.name}")
