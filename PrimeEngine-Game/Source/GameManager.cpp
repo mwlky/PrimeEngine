@@ -11,9 +11,8 @@ namespace Application
         m_Engine.CreateWindow("Game", 450, 180, WINDOW_WIDTH, WINDOW_HEIGHT);
         m_Engine.InitEngine([this] { Tick(); },
                             [this] { Start(); },
-                            [this] { Render(); });
-
-        m_Map = new Map();
+                            [this] { Render(); },
+                            [this] { Clean(); });
     }
 
     void GameManager::Start()
@@ -63,5 +62,11 @@ namespace Application
             m_PointsNumber++;
             m_CoinsController.DestroyCoin();
         }
+    }
+
+    void GameManager::Clean()
+    {
+        delete m_Map;
+        delete m_Label;
     }
 }

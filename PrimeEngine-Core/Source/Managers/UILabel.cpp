@@ -18,6 +18,11 @@ namespace Prime
         }
     }
 
+    UILabel::~UILabel()
+    {
+        CleanUp();
+    }
+
     void UILabel::DrawLabel(const std::string& text, int x, int y, SDL_Color color)
     {
         if(!m_Font)

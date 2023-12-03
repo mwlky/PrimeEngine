@@ -8,11 +8,13 @@ namespace Prime
     {
     public:
         UILabel(const std::string& path, int fontSize);
+        ~UILabel();
         
         void DrawLabel(const std::string& text, int x, int y, SDL_Color color);
-        void CleanUp();
 
     private:
+        void CleanUp();
+        
         TTF_Font* m_Font = nullptr;
     };
 }

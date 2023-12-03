@@ -23,7 +23,7 @@ namespace Prime {
         typedef std::function<void()> ClearFunction;
 
         void InitEngine(const TickFunction &tick, const StartFunction &startFunction,
-                        const RenderFunction &renderFunction);
+                        const RenderFunction &renderFunction, const ClearFunction& clear);
 
         void CreateWindow(const char *title, int xPos, int yPos, int width, int height);
 

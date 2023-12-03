@@ -78,7 +78,7 @@ namespace Prime
     }
 
     void PrimeEngine::InitEngine(const TickFunction& tick, const StartFunction& startFunction,
-                                 const RenderFunction& renderFunction)
+                                 const RenderFunction& renderFunction, const ClearFunction& clear)
     {
         Uint32 frameStart;
         double frameTime;
@@ -109,7 +109,8 @@ namespace Prime
                 SDL_Delay(frameDelay - frameTime);
             }
         }
-        
+
+        clear();
         Clear();
     }
 } // Prime
