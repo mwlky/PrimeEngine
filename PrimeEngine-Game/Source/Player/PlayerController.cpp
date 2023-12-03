@@ -1,7 +1,5 @@
 ﻿#include "PlayerController.h"
 
-#include "Helpers/Log.h"
-
 namespace Application
 {
     

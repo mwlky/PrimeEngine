@@ -1,10 +1,8 @@
 #ifndef PRIMEENGINE_PLAYER_H
 #define PRIMEENGINE_PLAYER_H
 
-
+#include "PrimeEngine.h"
 #include "PlayerAnimations.h"
-#include "Components/Sprite.h"
-#include "Components/Transform.h"
 #include "Math/Vector2.h"
 
 namespace Application {

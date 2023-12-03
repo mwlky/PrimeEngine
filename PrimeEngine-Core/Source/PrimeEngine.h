@@ -9,6 +9,7 @@
 #include "Components/Sprite.h"
 #include "Math/Vector2.h"
 #include "Events/EventHandler.h"
+#include "Managers/UILabel.h"
 
 namespace Prime {
 

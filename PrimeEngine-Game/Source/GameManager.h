@@ -3,7 +3,6 @@
 
 #include "PrimeEngine.h"
 #include "Coins/CoinsController.h"
-#include "Managers/UILabel.h"
 #include "Map/Map.h"
 #include "Player/PlayerController.h"
 

@@ -1,7 +1,5 @@
 #include "GameManager.h"
 
-#include "Managers/UILabel.h"
-
 #define LOG(X) std::cout<< X << std::endl
 
 namespace Application
