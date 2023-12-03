@@ -17,6 +17,7 @@ namespace Application {
         void Tick();
         void Start();
         void Render();
+        void HandleCollisions();
 
         Map* m_Map = nullptr;
 

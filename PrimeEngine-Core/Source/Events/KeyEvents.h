@@ -16,7 +16,8 @@ namespace Prime
         W,
         A,
         S,
-        D
+        D,
+        E
     };
 
     class KeyDownEvent : public Event<KeyEvents>

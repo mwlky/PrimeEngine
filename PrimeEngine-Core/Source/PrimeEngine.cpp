@@ -27,9 +27,14 @@ namespace Prime
             return;
         }
 
+        KeyDownEvent event;
+        
         switch (m_Event.key.keysym.sym)
         {
-    // TODO: Implements Key Down Events
+        case SDLK_e:
+            event.KeyCode = KeyCode::E;
+            SEND_KEY_EVENT(event);
+            
         }
     }
 
@@ -40,9 +45,13 @@ namespace Prime
             return;
         }
 
+        KeyUpEvent event;
+
         switch (m_Event.key.keysym.sym)
         {
-    // TODO: Implement KeyUp events
+        case SDLK_e:
+            event.KeyCode = KeyCode::E;
+            SEND_KEY_EVENT(event);
         }
     }
 

@@ -26,12 +26,33 @@ namespace Application
     {
         m_Map->TickMap();
         m_PlayerController.Tick();
-        m_CoinsController.TickCoins();
+        m_CoinsController.TickCoin();
+        HandleCollisions();
     }
 
     void GameManager::Render()
     {
-        m_CoinsController.RenderCoins();
+        m_CoinsController.RenderCoin();
         m_PlayerController.Render();
+    }
+
+    void GameManager::HandleCollisions()
+    {
+        Prime::Transform* playerTransform = m_PlayerController.GetPlayer()->GetEntity()->GetComponent<Prime::Transform>();
+        
+        int playerX = playerTransform->Position.x;
+        int playerY = playerTransform->Position.y;
+
+        int coinX = m_CoinsController.GetCoin()->GetPosition().x;
+        int coinY =  m_CoinsController.GetCoin()->GetPosition().y;
+
+        int positionXDif = Prime::Math::Clamp::ClampValue(coinX - playerX, 100, -100);
+
+        int positionYDif = Prime::Math::Clamp::ClampValue(coinY - playerY, 100, -100);
+        
+        if(positionXDif <= 35 && positionXDif >= -5 && positionYDif <= 50 && positionYDif >= -1)
+        {
+            m_CoinsController.DestroyCoin();
+        }
     }
 }

@@ -4,6 +4,10 @@
 
 namespace Application
 {
+    CoinsController::CoinsController()
+    {
+    }
+
     CoinsController::~CoinsController()
     {
         delete m_Coin;
@@ -20,13 +24,28 @@ namespace Application
                               position);
     }
 
-    void CoinsController::RenderCoins()
+    void CoinsController::RenderCoin()
     {
+        if(m_Coin == nullptr)
+            return;
+        
         m_Coin->Render();
     }
 
-    void CoinsController::TickCoins()
+    void CoinsController::TickCoin()
     {
+        if(m_Coin == nullptr)
+        {
+            SpawnCoin();
+            return;
+        }
+    
         m_Coin->Tick();
+    }
+
+    void CoinsController::DestroyCoin()
+    {
+        delete m_Coin;
+        SpawnCoin();
     }
 }

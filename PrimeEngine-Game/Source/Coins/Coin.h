@@ -11,6 +11,11 @@ namespace Application
         
         Coin(const char* spritePath, Prime::Vector2 position);
 
+        Prime::Vector2 GetPosition() const
+        {
+            return Prime::Vector2(m_DestRect.x, m_DestRect.y);
+        }
+        
         void Render();
         void Tick();
 
