@@ -25,13 +25,13 @@ namespace Application
     void GameManager::Tick()
     {
         m_Map->TickMap();
-        m_CoinsController.TickCoins();
         m_PlayerController.Tick();
+        m_CoinsController.TickCoins();
     }
 
     void GameManager::Render()
     {
-        m_PlayerController.Render();
         m_CoinsController.RenderCoins();
+        m_PlayerController.Render();
     }
 }

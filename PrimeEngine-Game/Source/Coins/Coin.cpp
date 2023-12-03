@@ -23,7 +23,9 @@ namespace Application
         }
 
         m_SourceRect = { 0,0, 16,16};
-        m_DestRect = {187,200, 32,32};
+        m_DestRect = {0,0, 32,32};
+        m_DestRect.x = position.x;
+        m_DestRect.y = position.y;
     }
 
     void Coin::Render()

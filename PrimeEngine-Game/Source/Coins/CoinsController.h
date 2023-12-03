@@ -1,4 +1,5 @@
 ﻿#pragma once
+#include "Coin.h"
 
 namespace Application
 {
@@ -6,11 +7,14 @@ namespace Application
     {
     public:
         CoinsController() = default;
-        ~CoinsController() = default;
+        ~CoinsController();
         
         void SpawnCoin();
         void RenderCoins();
         void TickCoins();
+
+    private:
+        Coin* m_Coin;
     };
     
 }
