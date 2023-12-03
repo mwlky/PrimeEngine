@@ -14,6 +14,7 @@ Prime Engine is my inaugural venture into the realm of C++ game development. Thi
 - SDL2
 - SDL2_Image
 - SDL2_TFF
+- premake
 ## Installation on Windows
 
 - Clone repository
