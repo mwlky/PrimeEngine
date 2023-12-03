@@ -2,6 +2,7 @@
 #define PRIMEENGINE_GAMEMANAGER_H
 
 #include "PrimeEngine.h"
+#include "Coins/CoinsController.h"
 #include "Map/Map.h"
 #include "Player/PlayerController.h"
 
@@ -18,7 +19,8 @@ namespace Application {
         void Render();
 
         Map* m_Map = nullptr;
-        
+
+        CoinsController m_CoinsController {};
         PlayerController m_PlayerController {};
         Prime::PrimeEngine m_Engine {};
 

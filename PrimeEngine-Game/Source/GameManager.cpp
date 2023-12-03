@@ -17,17 +17,21 @@ namespace Application
     void GameManager::Start()
     {
         m_Map->DrawMap(WINDOW_HEIGHT, WINDOW_WIDTH);
+        m_CoinsController.SpawnCoin();
+        
         m_PlayerController.Init();
     }
 
     void GameManager::Tick()
     {
         m_Map->TickMap();
+        m_CoinsController.TickCoins();
         m_PlayerController.Tick();
     }
 
     void GameManager::Render()
     {
         m_PlayerController.Render();
+        m_CoinsController.RenderCoins();
     }
 }

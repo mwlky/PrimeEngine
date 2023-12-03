@@ -12,6 +12,7 @@ namespace Prime {
     public:
         static SDL_Texture* LoadTexture(const char* filePath);
         static void Draw(SDL_Texture *texture, SDL_Rect destinationPosition);
+        static void Draw(SDL_Texture *texture, SDL_Rect sourceRect, SDL_Rect position);
 
     private:
         std::vector<SDL_Texture *> m_Textures;
