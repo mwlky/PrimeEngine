@@ -25,8 +25,7 @@ namespace Application
                 int y = 0 + 64 * j;
 
                 Prime::Vector2 position(x, y);
-
-                std::cout << "Started" << std::endl;
+                
                 Tile* tile = m_TileGenerator.GetRandomTile(position);
                 
                 m_Tiles.push_back(tile);
