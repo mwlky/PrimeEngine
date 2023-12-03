@@ -1,7 +1,6 @@
 ﻿#pragma once
-#include <vector>
 
-#include "Tile.h"
+#include "TileGenerator.h"
 
 namespace Application
 {
@@ -12,9 +11,9 @@ namespace Application
 
         void TickMap();
         void DrawMap(const int& height, const int& width);
-        
+
     private:
-        void RenderMap();
+        TileGenerator m_TileGenerator;
     };
 }
 

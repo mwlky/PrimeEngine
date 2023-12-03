@@ -3,7 +3,7 @@
 namespace Application
 {
     static std::vector<Tile*> m_Tiles;
-    
+
     void Map::TickMap()
     {
         for (auto tile : m_Tiles)
@@ -12,7 +12,7 @@ namespace Application
         }
     }
 
-    void Application::Map::DrawMap(const int& height, const int& width)
+    void Map::DrawMap(const int& height, const int& width)
     {
         int targetWidth = width / 64 + 1;
         int targetHeight = height / 64 + 1;
@@ -26,16 +26,11 @@ namespace Application
 
                 Prime::Vector2 position(x, y);
 
-                auto tile = new Tile(
-                            "../../PrimeEngine/PrimeEngine-Game/Assets/Map/punyworld-overworld-tileset_0.png",
-                            position);
-
+                std::cout << "Started" << std::endl;
+                Tile* tile = m_TileGenerator.GetRandomTile(position);
+                
                 m_Tiles.push_back(tile);
             }
         } 
-    }
-
-    void Application::Map::RenderMap()
-    {
     }
 }

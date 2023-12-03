@@ -29,7 +29,6 @@ namespace Application
         m_PlayerController.Tick();
         m_CoinsController.TickCoin();
         HandleCollisions();
-        
     }
 
     void GameManager::Render()
